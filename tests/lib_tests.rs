@@ -9,3 +9,11 @@ fn test_empty_list() {
     let read_list: Vec<i32> = remove_duplicate::remove_duplicate(&list);
     assert_eq!(read_list, list);
 }
+
+
+#[test]
+fn test_two_member_list() {
+    let list: Vec<i32> = vec![1, 2];
+    let read_list: Vec<i32> = remove_duplicate::remove_duplicate(&list);
+    assert_eq!(read_list, list);
+}
