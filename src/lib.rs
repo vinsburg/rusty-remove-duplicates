@@ -12,10 +12,8 @@ pub fn remove_duplicate(list: &mut Vec<i32>) {
         }
     }
 
-    let mut index_of_current_item = index_list.len();
-    while index_of_current_item > 0 {
-        index_of_current_item -= 1;
-        let index = index_list[index_of_current_item];
+    while index_list.len() > 0 {
+        let index: usize = index_list.pop().unwrap();
         list.remove(index);
     }
 }
