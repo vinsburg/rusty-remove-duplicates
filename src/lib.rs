@@ -1,15 +1,18 @@
 use std::collections::HashSet;
 
-pub fn remove_duplicate(list: &Vec<i32>) -> Vec<i32>{
+pub fn remove_duplicate(list: &mut Vec<i32>) {
     let mut set: HashSet<i32> = HashSet::new();
-    let mut new_list: Vec<i32> = Vec::new();
+    let mut index_list: Vec<usize> = Vec::new();
 
-    for &item in list {
+    for (index, &item) in list.iter().enumerate() {
         if !set.contains(&item) {
             set.insert(item);
-            new_list.push(item);
+        } else {
+            index_list.push(index);
         }
     }
 
-    new_list
+    for index in index_list {
+        list.remove(index);
+    }
 }
